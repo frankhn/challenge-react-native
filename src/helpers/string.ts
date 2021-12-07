@@ -1,0 +1,1 @@
+export const textLimit = (limit: number, text: string) => text.slice(0, limit);
