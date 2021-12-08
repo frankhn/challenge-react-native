@@ -5,8 +5,7 @@ import {
     KeyboardTypeOptions,
     TextInput,
 } from 'react-native';
-import tailwind from 'tailwind-rn';
-import { COLORS } from '../../helpers';
+import { COLORS, METRIX } from '../../helpers';
 interface IInput {
     handleChange(name: string): void
     value?: any,
@@ -48,7 +47,7 @@ export default ({
             secureTextEntry={secureTextEntry}
             onChangeText={(value: string) => handleChange(value)}
             onSubmitEditing={onSubmitEditing ?? null}
-            style={[tailwind(' lowercase'), styles]}
+            style={[METRIX.style(' lowercase my-2 p-4'), { backgroundColor: COLORS.primaryOut }, styles]}
         />
     )
 }
