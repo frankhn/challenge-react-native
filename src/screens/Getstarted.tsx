@@ -6,12 +6,12 @@ import Layout from '../components/Layout';
 import { COLORS, METRIX } from '../helpers';
 import { PublicNavigatorList } from '../navigation/types';
 
-interface IHome {
+interface IGetStarted {
     navigation: StackNavigationProp<PublicNavigatorList, 'Getstarted'>;
 }
 
 
-const Getstarted = ({ navigation }: IHome) => {
+const Getstarted = ({ navigation }: IGetStarted) => {
     return (
         <Layout>
             <View style={METRIX.style('flex-1 justify-end')}>

@@ -5,13 +5,13 @@ import Button from '../components/common/Button';
 import Input from '../components/common/Input';
 import Layout from '../components/Layout';
 import {METRIX } from '../helpers';
-import { NavigatorParamList } from '../navigation/types';
+import { PublicNavigatorList } from '../navigation/types';
 
-interface IHome {
-    navigation: StackNavigationProp<NavigatorParamList, 'Home'>;
+interface ILogin {
+    navigation: StackNavigationProp<PublicNavigatorList, 'Login'>;
 }
 
-const Login = ({ navigation }: IHome) => {
+const Login = ({ navigation }: ILogin) => {
     return (
         <Layout>
             <>
