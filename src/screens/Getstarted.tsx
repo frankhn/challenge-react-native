@@ -23,12 +23,12 @@ const Getstarted = ({ navigation }: IHome) => {
             <View style={METRIX.style('flex-1 justify-end px-4 pb-10')}>
                 <TouchableWithoutFeedback
                     onPress={() => navigation.navigate('Login')}
-                    style={[METRIX.style('py-3 rounded-md'), { backgroundColor: COLORS.yellow }]}>
+                    style={[METRIX.style('py-3 rounded-sm'), { backgroundColor: COLORS.yellow }]}>
                     <Text style={METRIX.style('text-center')}>Login</Text>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback
-                    onPress={() => navigation.navigate('Login')}
-                    style={[METRIX.style('mt-5 py-3 rounded-md'), { backgroundColor: COLORS.yellowOut }]}>
+                    onPress={() => navigation.navigate('Signup')}
+                    style={[METRIX.style('mt-5 py-3 rounded'), { backgroundColor: COLORS.primaryOut }]}>
                     <Text style={[METRIX.style('text-center text-yellow-400')]}>Create Account</Text>
                 </TouchableWithoutFeedback>
             </View>
