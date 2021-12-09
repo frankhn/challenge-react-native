@@ -37,7 +37,7 @@ export default ({
     return (
         <TextInput
             placeholder={placeholder}
-            placeholderTextColor={placeholderTextColor ?? COLORS.gray}
+            placeholderTextColor={placeholderTextColor ?? COLORS.grayOut}
             underlineColorAndroid={underlineColorAndroid ?? 'transparent'}
             returnKeyType={returnKeyType ?? 'next'}
             autoCapitalize={'none'}
@@ -47,7 +47,7 @@ export default ({
             secureTextEntry={secureTextEntry}
             onChangeText={(value: string) => handleChange(value)}
             onSubmitEditing={onSubmitEditing ?? null}
-            style={[METRIX.style(' lowercase my-2 p-4'), { backgroundColor: COLORS.primaryOut }, styles]}
+            style={[METRIX.style(' lowercase my-2 p-4 text-white'), { backgroundColor: COLORS.primaryOut }, styles]}
         />
     )
 }
