@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../screens/Login';
 import Getstarted from '../screens/Getstarted';
 import { COLORS } from '../helpers';
+import Signup from '../screens/Signup';
 const Stack = createStackNavigator();
 
 const header = {
@@ -30,6 +31,18 @@ export default () => (
     <Stack.Screen
       name="Login"
       component={Login}
+      options={{
+        headerShown: true,
+        headerTitleStyle: {
+          color: COLORS.white,
+        },
+        presentation: 'transparentModal',
+        ...header,
+      }}
+    />
+    <Stack.Screen
+      name="Signup"
+      component={Signup}
       options={{
         headerShown: true,
         headerTitleStyle: {
