@@ -8,6 +8,7 @@ export type PublicNavigatorList = {
   Login: undefined;
   Getstarted: undefined
   Signup: undefined
+  Verify: undefined
 };
 
 export type RootNavigatorParamList = {
