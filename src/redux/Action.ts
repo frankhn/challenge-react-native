@@ -1,4 +1,4 @@
-import { ACTION_TYPE, GET_SIGNED_USER_SUCCESS, MAIN_ACTION_TYPE } from "./ActionTypes"
+import { ACTION_CLEANER, ACTION_TYPE, MAIN_ACTION_TYPE } from "./ActionTypes"
 
 interface IActionSTART {
     method?: 'get' | 'post' | 'put' | 'delete',
@@ -9,6 +9,14 @@ interface IActionSTART {
 
 export const action = (payload: IActionSTART) => ({
     type: MAIN_ACTION_TYPE,
+    payload: { ...payload }
+})
+
+interface IActionClean {
+    type: keyof typeof ACTION_TYPE
+}
+export const clean = (payload: IActionClean) => ({
+    type: ACTION_CLEANER,
     payload: { ...payload }
 })
 
@@ -30,7 +38,3 @@ interface IAsyncStorageACtion {
     act: 'remove' | 'save' | 'get',
     key: string
 }
-export const _init = (data:any) => ({
-    type: GET_SIGNED_USER_SUCCESS,
-    payload: data
-})
