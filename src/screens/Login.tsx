@@ -1,10 +1,13 @@
 import { StackNavigationProp } from '@react-navigation/stack';
-import React from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native'
+import auth from '@react-native-firebase/auth';
+
+// Local import
 import Button from '../components/common/Button';
 import Input from '../components/common/Input';
 import Layout from '../components/Layout';
-import {METRIX } from '../helpers';
+import { METRIX, OBJECT } from '../helpers';
 import { PublicNavigatorList } from '../navigation/types';
 
 interface ILogin {
@@ -12,6 +15,9 @@ interface ILogin {
 }
 
 const Login = ({ navigation }: ILogin) => {
+    const [user, setUser] = useState({ name: '', email: '', password: '' });
+
+    
     return (
         <Layout>
             <>
@@ -19,20 +25,22 @@ const Login = ({ navigation }: ILogin) => {
                     METRIX.style('w-full py-6 px-4')}>
                     <Input
                         placeholder="Names"
-                        handleChange={() => null}
+                        handleChange={(name) => setUser(OBJECT.UPDATE(user, { name }))}
                         returnKeyType='next'
                         styles={
                             METRIX.style('w-full')}
-                        value=''
+                        value={user.name}
                         keyboardType='default'
                     />
                     <Input
                         placeholder="Email"
-                        handleChange={() => null}
+                        handleChange={(email) =>
+                            setUser(OBJECT.UPDATE(user, { email }))
+                        }
                         returnKeyType='next'
                         styles={
                             METRIX.style('w-full')}
-                        value=''
+                        value={user.email}
                         keyboardType='default'
                     />
                 </View>

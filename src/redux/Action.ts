@@ -1,6 +1,5 @@
 import { ACTION_TYPE, GET_SIGNED_USER_SUCCESS, MAIN_ACTION_TYPE } from "./ActionTypes"
 
-
 interface IActionSTART {
     method?: 'get' | 'post' | 'put' | 'delete',
     type: keyof typeof ACTION_TYPE
@@ -12,7 +11,6 @@ export const action = (payload: IActionSTART) => ({
     type: MAIN_ACTION_TYPE,
     payload: { ...payload }
 })
-
 
 interface IActionEND {
     type: string,
