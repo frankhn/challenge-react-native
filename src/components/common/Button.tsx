@@ -4,11 +4,13 @@ import {
     TouchableWithoutFeedback,
     Text,
     View,
+    ActivityIndicator,
 } from 'react-native';
 import { COLORS, METRIX } from '../../helpers';
 interface IInput {
     handleChange(): void
     value?: any,
+    loading?: boolean
     styles?: StyleProp<any>
     textStyles?: StyleProp<any>
 }
@@ -16,6 +18,7 @@ interface IInput {
 export default ({
     handleChange,
     styles,
+    loading = false,
     value,
     textStyles
 }: IInput) => {
@@ -24,7 +27,10 @@ export default ({
             onPress={handleChange}>
             <View
                 style={[METRIX.style('rounded-md py-3'), { backgroundColor: COLORS.yellow }]}>
-                <Text style={[METRIX.style('text-center')]}>{value}</Text>
+                {!loading ?
+                    <Text style={[METRIX.style('text-center')]}>{value}</Text>
+                    : <ActivityIndicator size="small" color={COLORS.white} />
+                }
             </View>
         </TouchableWithoutFeedback>
     )
