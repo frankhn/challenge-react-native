@@ -12,7 +12,7 @@ let token = '';
 })();
 
 const HTTP = axios.create({
-  baseURL: '',
+  baseURL: 'https://staging.bktechouse.rw/cas/api/v1',
 });
 
 HTTP.interceptors.request.use(request => {
